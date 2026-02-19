@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://via.placeholder.com/80x80/6366f1/ffffff?text=A" alt="Aiden UI" width="80" height="80" />
+<img src="https://adenui.com/favicon.ico" alt="Aiden UI" width="80" height="80" />
 
 # AIDEN UI
 
@@ -10,7 +10,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-Private-6366f1?style=flat-square)](LICENSE)
 
-[Components](#components) · [Developer Guides](#developer-guides) · [Submission](#submission-process) · [Requirements](#requirements)
+[About This Project](#about-this-project) · [Why Aiden UI Exists](#why-aiden-ui-exists) · [Components](#components) · [Requirements](#requirements)
 
 ---
 
@@ -135,8 +135,9 @@ import { DatePickerComponent } from './date-picker';
 ```html
 <date-picker [(ngModel)]="selectedDate"></date-picker>
 ```
+````
 
 ## Author
 GitHub: [@EnsslinAdrian](https://github.com/EnsslinAdrian)
-````
+
 
