@@ -4,140 +4,105 @@
 
 # AIDEN UI
 
-**Angular Component Library & Collection of Developer Guides**
+**Curated Angular Component Library**  
+Built from real projects. Not from tutorials.
 
-[![Angular](https://img.shields.io/badge/Angular-17+-DD0031?style=flat-square&logo=angular&logoColor=white)](https://angular.io/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-Private-6366f1?style=flat-square)](LICENSE)
-
-[About This Project](#about-this-project) · [Why Aiden UI Exists](#why-aiden-ui-exists) · [Components](#components) · [Requirements](#requirements)
-
----
-
+[Aden UI Website](https://adenui.com)
 </div>
 
-## About This Project
+---
 
-**Aiden UI** is a private Angular component library and collection of developer guides. Based on real development experience, not theoretical examples.
+## Philosophy
 
-This project started as a personal toolkit. The same components were recreated repeatedly across different projects. The same problems were solved over and over.
+Aiden UI exists to eliminate repeated work in Angular projects.
 
-Developer notes accumulated. Quick references became structured guides. Reusable components were extracted and organized.
+Over time, reusable patterns and clean abstractions emerged from real-world development.  
+This library collects those components and structures them properly.
 
-What began as scattered notes and copy-paste code evolved into **Aiden UI** — a curated collection of practical components and experience-driven guides.
-
-> This is not open-source in the classical sense. It is a structured resource that emerged from real development work.
-
-**Aiden UI is privately owned and curated.** External submissions are selectively reviewed, and there is no automatic inclusion of submitted components.
+It is **curated**, not community-driven.  
+Every component is reviewed and must meet strict architectural standards.
 
 ---
 
-## Why Aiden UI Exists
+## Core Principles
 
-**Reduce Repetitive Work**  
-Stop constantly rebuilding the same components.
+Every component must:
 
-**Provide Practical Solutions**  
-Components based on real development experience.
+- Be `standalone: true`
+- Use Angular Signals (`input()`, `computed()`)
+- Follow clean Dependency Injection practices
+- Avoid external UI frameworks (no Bootstrap, no jQuery)
+- Be compatible with zoneless Angular applications
+- Prioritize clarity over abstraction
 
-**Ensure Maintainability**  
-Clean, well-structured code that stands the test of time.
-
-**Avoid Over-Engineering**  
-Practical solutions that prioritize clarity.
-
-This project reflects how things are actually built in everyday Angular development.
-
----
-
-## Components
-
-A collection of reusable Angular components built according to specific architectural guidelines.
-
-### Component Principles
-
-```typescript
-// ✅ Dependency Injection required
-constructor(private service: DataService) {}
-
-// ❌ No Zoneless Components
-// Standard Angular Change Detection is used
-
-// ✅ Clean separation
-// Logic and presentation are separated
-
-// ❌ No bootstrap code
-// Components only, no complete applications
-```
-
-### What is NOT Included
-
-- Application bootstrap code
-- Angular project setup
-- Complete application examples
+No overengineering.  
+No unnecessary dependencies.  
+Only maintainable Angular code.
 
 ---
 
-## Requirements
+## What This Repository Contains
 
-The following requirements are **mandatory** for all component submissions.
+- Reusable Angular components
+- Structured developer guides
+- Strict contribution standards
 
-### Component Structure
+---
 
-Every component submitted to Aiden UI must follow this exact structure:
+## Required Folder Structure
 
+Every component must follow this exact structure:
 ```
 components/
-└── example-component/
+└── example/
+    ├── README.md
     ├── example.component.ts
     ├── example.component.html
     └── example.component.scss
 ```
 
-**No additional files or folders are allowed.**
+No additional files.  
+No project configuration.  
+No hidden dependencies.
 
-### Component README
+Each folder must be self-contained.
 
-Each component directory must contain a `README.md` with:
+---
 
-- Brief description
+## Component Documentation Requirements
+
+Each `example/README.md` must include:
+
+- Short description
 - Intended use case
 - Required Angular version (if relevant)
 - Required dependencies (if any)
-- Setup instructions (only if required)
+- Setup instructions (only if necessary)
 - Simple usage example
-- Author credits
+- Author credit
 
-Keep documentation concise and practical.
+Keep it concise.  
+Keep it practical.
 
-#### Example
+---
 
-````markdown
-# DatePicker Component
+## Contribution Policy
 
-Lightweight datepicker for Angular forms.
+Aiden UI is curated.
 
-## Use Case
-Simple date selection with keyboard navigation.
+Every submission is reviewed for:
 
-## Requirements
-- Angular 17+
-- @angular/forms
+- Performance
+- Accessibility (ARIA compliance)
+- Reusability
+- Architectural clarity
+- Code quality
 
-## Setup
-Import the component:
+If it aligns with the vision, it becomes part of the library.
 
-```ts
-import { DatePickerComponent } from './date-picker';
-```
-
-## Usage
-```html
-<date-picker [(ngModel)]="selectedDate"></date-picker>
-```
-````
+---
 
 ## Author
-GitHub: [@EnsslinAdrian](https://github.com/EnsslinAdrian)
-
-
+Adrian Enßlin  
+[Aden UI Website](https://adenui.com) <br>
+[GitHub](https://github.com/EnsslinAdrian)
