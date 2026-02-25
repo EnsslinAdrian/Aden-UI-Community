@@ -13,6 +13,10 @@
   padding: 0 16px;
   height: 44px;
 
+  @media (max-width: 420px) {
+    padding: 0 0px;
+  }
+
   .tab-group {
     display: flex;
     height: 100%;
@@ -27,7 +31,10 @@
       border-bottom: 2px solid transparent;
       transition: all 0.2s;
 
-      &:hover { color: var(--primary-white); }
+      &:hover {
+        color: var(--primary-white);
+      }
+
       &.active {
         color: var(--primary-white);
         border-bottom-color: var(--accent-color);
@@ -48,7 +55,13 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 14px;
+  }
 }
+
 .code-section {
   background: #0d0d0d;
 
@@ -68,7 +81,10 @@
       cursor: pointer;
       transition: all 0.2s;
 
-      &:hover { border-color: var(--text-muted); }
+      &:hover {
+        border-color: var(--text-muted);
+      }
+
       &.active {
         color: var(--accent-color);
         border-color: var(--accent-color);

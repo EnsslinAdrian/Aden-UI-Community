@@ -55,21 +55,25 @@ Access the environment at:
 This project is structured to keep the workbench engine separate from
 your creative work.
 
-    |-- 📁 src/app/
-    |   |-- 📁 contributions/      <-- YOUR WORKSPACE (Focus here)
-    |   |   |-- 📁 my-contribution/
-    |   |   |   |-- my-contribution.component.ts
-    |   |   |   |-- my-contribution.component.html
-    |   |   |   |-- my-contribution.component.scss
-    |   |
-    |   |-- 📁 pages/             
-    |   |    |-- 📁 workbench/     <-- Workbench register your Component
-    |   |    |-- 📁 home/
-    |   |
-    |   |-- 📁 shared/             <-- Shared Workbench Components
-    |   |-- 📄 app.routes.ts       <-- Routing configuration
-    |-- 📄 angular.json            <-- Build & PrismJS configuration
-    |-- 📄 package.json            <-- Dependencies
+|-- 📁 src/
+|   |-- 📁 app/
+|   |   |-- 📁 contributions/   <-- YOUR WORKSPACE (Focus here)
+|   |   |   |-- 📁 my-component/
+|   |   |   |   |-- my-comp.ts, .html, .scss
+|   |   |
+|   |   |-- 📁 pages/
+|   |   |   |-- 📁 workbench/   <-- Register your contribution here
+|   |   |   |-- 📁 home/
+|   |   |
+|   |   |-- 📁 shared/          <-- Internal UI elements (Playground, BaseUi)
+|   |   |-- 📄 app.routes.ts    <-- Routing configuration
+|   |
+|   |-- 📄 _variables.scss  <-- Global colors (The Source of Truth)
+|   |   📄 styles.scss      <-- Global resets & imports
+|   |-- 📄 main.ts              <-- Application entry point
+|
+|-- 📄 angular.json             <-- Build & PrismJS configuration
+|-- 📄 package.json             <-- Dependencies & Scripts
 
 
 ## Usage & Workflow
@@ -111,11 +115,11 @@ To preview it, swap the selector in:
 
 To ensure your component is accepted for the Aden UI library, it must follow these rules:
 
-- **Standalone**: All components must be `standalone: true`
-- **Signals**: Use Angular Signals for state management (`input()`, `computed()`, `signal()`)
-- **Playground**: The component template must be wrapped in `<app-ui-playground>`
+- **Standalone**: All components must be `standalone: true`.
+- **Signals**: Use Angular Signals for state management (`input()`, `computed()`, `signal()`).
+- **Playground**: The component template must be wrapped in `<app-ui-playground>`.
+- **Design Tokens**: Prioritize using the global CSS variables from `_variables.scss` for all styling to ensure UI consistency. If you need to define custom colors, declare them in the `:host` selector using the `--aden-` prefix and a clear, descriptive name.
 - **Required Workbench Variables**: The variables `codeHtml`, `codeScss`, `codeTs`, and `installCode` must be filled with the final, production-ready code. These are used to generate the live preview, provide copy-paste snippets for other developers, and generate installation instructions. They must not be left empty or contain placeholder content.
-
 
 ## Submission Process
 
@@ -137,8 +141,7 @@ git push origin main
 ### 3. Submit URL
 
 Copy the URL of your GitHub Fork and paste it into the contribution form on:
-
-    https://adenui.com/contribution
+https://adenui.com/contribution
 
 
 ## Author

@@ -1,3 +1,20 @@
+/**
+   * CUSTOM STYLES & OVERRIDES
+   *
+   * Use this section to extend or override the global color palette for this component.
+   * To maintain UI consistency, please prioritize using variables from `_variables.scss`.
+   *
+   * If you need to define a new color, ensure the variable name is descriptive and
+   * follows the `--aden-` prefix convention so others understand its purpose.
+   */
+:host {
+  --aden-pure-black: #000000;
+  --aden-white: #ffffff;
+}
+
+
+// Write your classes and styles for the my-contribution component here
+
 .starter-box {
   text-align: center;
 

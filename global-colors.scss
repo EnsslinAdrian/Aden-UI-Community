@@ -1,0 +1,35 @@
+:host {
+  /* --- Foundation --- */
+  --aden-bg-black: #0f0f0f;
+  --aden-pure-black: #000000;
+  --aden-surface-dark: #1a1a1a;
+  --aden-surface-light: #2a2a2a;
+  --aden-border-gray: #333333;
+  --aden-border-hover-gray: #555555;
+
+  /* --- Typography --- */
+  --aden-text-white: #e5e5e5;
+  --aden-text-muted-gray: #a1a1aa;
+  --aden-white: #ffffff;
+
+  /* --- Brand / Interaktion --- */
+  --aden-primary-green: #4ade80;
+  --aden-primary-dark-green: #22c55e;
+  --aden-accent-blue: #3b82f6;
+
+  /* --- Semantic --- */
+  --aden-danger-red: #ef4444;
+  --aden-error-red: #f87171;
+  --aden-warning-orange: #fbbf24;
+  --aden-info-blue: #60a5fa;
+
+  /* --- Glows & Alphas  --- */
+  --aden-glow-green: rgba(74, 222, 128, 0.2);
+  --aden-glow-blue: rgba(59, 130, 246, 0.2);
+  --aden-glow-primary-green: 0 0 10px rgba(74, 222, 128, 0.3);
+
+  --aden-white-alpha-05: rgba(255, 255, 255, 0.05);
+  --aden-white-alpha-10: rgba(255, 255, 255, 0.1);
+  --aden-white-alpha-50: rgba(255, 255, 255, 0.5);
+  --aden-black-alpha-50: rgba(0, 0, 0, 0.5);
+}

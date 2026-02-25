@@ -38,8 +38,14 @@
       </div>
       <div class="box-body">
         <ul>
-          <li><strong>Playground:</strong> Always keep your component wrapped in <code>&lt;app-ui-playground&gt;</code>.</li>
-          <li><strong>Meta Data:</strong> Fill out the <code>meta</code> object in your TS file (this generates the header).</li>
+          <li><strong>Playground:</strong> Always keep your component wrapped in <code>&lt;app-ui-playground&gt;</code>.
+          </li>
+          <li><strong>Meta Data:</strong> Fill out the <code>meta</code> object in your TS file (this generates the
+            header).</li>
+          <li><strong>Global Tokens:</strong> Prioritize using variables from <code>_variables.scss</code> to maintain
+            UI consistency across all components.</li>
+          <li><strong>Custom Colors:</strong> If a new color is required, define it in <code>:host</code> using the
+            <code>--aden-</code> prefix and a descriptive name.</li>
         </ul>
       </div>
     </section>
