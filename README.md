@@ -55,6 +55,7 @@ Access the environment at:
 This project is structured to keep the workbench engine separate from
 your creative work.
 
+```
 |-- 📁 src/
 |   |-- 📁 app/
 |   |   |-- 📁 contributions/   <-- YOUR WORKSPACE (Focus here)
@@ -74,7 +75,7 @@ your creative work.
 |
 |-- 📄 angular.json             <-- Build & PrismJS configuration
 |-- 📄 package.json             <-- Dependencies & Scripts
-
+```
 
 ## Usage & Workflow
 
