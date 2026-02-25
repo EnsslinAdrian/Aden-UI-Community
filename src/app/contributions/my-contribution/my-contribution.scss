@@ -1,12 +1,7 @@
 /**
-   * CUSTOM STYLES & OVERRIDES
-   *
-   * Use this section to extend or override the global color palette for this component.
-   * To maintain UI consistency, please prioritize using variables from `_variables.scss`.
-   *
-   * If you need to define a new color, ensure the variable name is descriptive and
-   * follows the `--aden-` prefix convention so others understand its purpose.
-   */
+ * Use `_variables.scss` tokens for consistency. Define new colors in `:host`
+ * using the `--aden-` prefix. Ensure the layout is responsive down to 320px.
+ */
 :host {
   --aden-pure-black: #000000;
   --aden-white: #ffffff;
