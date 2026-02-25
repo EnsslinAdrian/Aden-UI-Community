@@ -38,8 +38,15 @@
       </div>
       <div class="box-body">
         <ul>
-          <li><strong>Playground:</strong> Always keep your component wrapped in <code>&lt;app-ui-playground&gt;</code>.</li>
-          <li><strong>Meta Data:</strong> Fill out the <code>meta</code> object in your TS file (this generates the header).</li>
+          <li><strong>Playground:</strong> Always keep your component wrapped in <code>&lt;app-ui-playground&gt;</code>.
+          </li>
+          <li><strong>Meta Data:</strong> Fill out the <code>meta</code> object in your TS file (this generates the
+            header).</li>
+          <li><strong>Design Tokens:</strong> Prioritize global variables from <code>_variables.scss</code> or define
+            new colors in <code>:host</code> using the <code>--aden-</code> prefix and a descriptive name to maintain UI
+            consistency.</li>
+          <li><strong>Responsiveness:</strong> Ensure your component is fully responsive and functions flawlessly down
+            to a minimum width of <code>320px</code>.</li>
         </ul>
       </div>
     </section>

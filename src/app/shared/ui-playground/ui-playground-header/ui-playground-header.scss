@@ -4,8 +4,17 @@
   border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+
+  }
+
+  @media (max-width: 420px) {
+    padding: 14px;
+  }
 }
 
 .comp-title {
