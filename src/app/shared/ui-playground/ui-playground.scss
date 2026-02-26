@@ -1,16 +1,15 @@
 .playground-container {
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  background-color: var(--dark-grey);
+  background-color: var(--aden-bg-hover);
   overflow: hidden;
   margin-bottom: 30px;
 }
 
 .tabs-nav {
   display: flex;
-  background: #111;
-  border-bottom: 1px solid var(--border-color);
-  padding: 0 16px;
+  background: #18181b;
+  border-bottom: 1px solid #27272a;
   height: 44px;
   box-sizing: border-box;
 
@@ -25,7 +24,7 @@
     .tab-btn {
       background: none;
       border: none;
-      color: var(--text-muted);
+      color: var(--aden-text-muted-gray);
       padding: 0 16px;
       font-size: 13px;
       cursor: pointer;
@@ -34,16 +33,16 @@
       box-sizing: border-box;
 
       &:hover {
-        color: var(--primary-white);
+        color: var(--aden-white);
       }
 
       &:hover {
-        color: var(--primary-white);
+        color: var(--aden-white);
       }
 
       &.active {
-        color: var(--primary-white);
-        border-bottom-color: var(--accent-color);
+        color: var(--aden-white);
+        border-bottom-color: var(--aden-accent-blue);
       }
     }
   }
@@ -52,7 +51,7 @@
 .preview-canvas {
   width: 100%;
   min-height: 400px;
-  background-color: #030303;
+  background-color: var(--aden-pure-black);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -69,33 +68,111 @@
 }
 
 .code-section {
-  background: #0d0d0d;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
-  .sub-nav {
+  .code-header {
     display: flex;
-    gap: 8px;
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--border-color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    border-bottom: 1px solid var(--aden-border-gray);
 
-    button {
-      background: #18181b;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
+    .file-tabs-container {
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
 
-      &:hover {
-        border-color: var(--text-muted);
+      &::-webkit-scrollbar {
+        display: none;
       }
 
-      &.active {
-        color: var(--accent-color);
-        border-color: var(--accent-color);
-        background: rgba(59, 130, 246, 0.1);
+      .file-label {
+        font-family: var(--aden-font-mono);
+        font-size: 11px;
+        color: var(--aden-text-muted-gray);
+        padding-left: 8px;
+        opacity: 0.8;
+      }
+
+      .sub-tabs {
+        display: flex;
+        gap: 10px;
+
+        .sub-tab-btn {
+          background: transparent;
+          border: none;
+          border: 1px solid var(--aden-border-gray);
+          color: var(--aden-text-muted-gray);
+          font-size: 11px;
+          font-family: var(--aden-font-mono);
+          padding: 6px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          white-space: nowrap;
+
+          &:hover {
+            background: var(--aden-surface-light);
+            color: var(--aden-white);
+          }
+
+          &.active {
+            background: var(--aden-surface-light);
+            color: var(--aden-info-blue);
+            border: 1px solid var(--aden-info-blue);
+
+          }
+        }
+      }
+    }
+
+    .copy-trigger {
+      background: #161616;
+      border: 1px solid var(--aden-border-gray);
+      border-radius: 6px;
+      color: var(--aden-text-muted-gray);
+      cursor: pointer;
+      padding: 6px 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+
+      .btn-content {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .label {
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      &:hover {
+        border-color: #555;
+        color: var(--aden-white);
+        background: #1a1a1a;
+      }
+
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      @media (max-width: 480px) {
+        padding: 6px 8px;
+
+        .label {
+          display: none;
+        }
       }
     }
   }
 }
+

@@ -1,10 +1,11 @@
 pre {
   margin: 0;
-  padding: 24px;
-  background: #0a0a0a !important;
+  padding: 16px;
+  background: #121212 !important;
   overflow: auto;
   border-radius: 0 0 12px 12px;
   box-sizing: border-box;
+  min-height: 300px;
 }
 
 code {

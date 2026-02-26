@@ -3,8 +3,19 @@ import { CodeHighlight } from "../code-highlight/code-highlight";
 import { UiPlaygroundHeader } from "./ui-playground-header/ui-playground-header";
 import { CommonModule } from '@angular/common';
 
+export interface PlaygroundFile {
+  name: string;
+  language: 'markup' | 'scss' | 'typescript' | 'bash';
+  code: string;
+}
+
+export interface MetaData {
+  title: string;
+  description: string;
+  username: string;
+}
+
 type PlaygroundTab = 'preview' | 'code' | 'install';
-type CodeLanguage = 'markup' | 'scss' | 'typescript' | 'bash';
 
 @Component({
   selector: 'app-ui-playground',
@@ -14,40 +25,52 @@ type CodeLanguage = 'markup' | 'scss' | 'typescript' | 'bash';
   styleUrl: './ui-playground.scss',
 })
 export class UiPlayground {
-  meta = input<any>();
-  htmlCode = input<string>('');
-  scssCode = input<string>('');
-  tsCode = input<string>('');
+  meta = input<MetaData>();
+  copied = signal(false);
+
+  files = input<PlaygroundFile[]>([]);
   installCode = input<string>('');
 
   activeTab = signal<PlaygroundTab>('preview');
-  activeLang = signal<'markup' | 'scss' | 'typescript'>('markup');
+  activeFileIndex = signal<number>(0);
 
   currentCodeDisplay = computed(() => {
     if (this.activeTab() === 'install') {
       return this.installCode();
     }
 
-    switch (this.activeLang()) {
-      case 'markup': return this.htmlCode();
-      case 'scss': return this.scssCode();
-      case 'typescript': return this.tsCode();
-      default: return '';
+    const currentFiles = this.files();
+    if (currentFiles.length > 0) {
+      return currentFiles[this.activeFileIndex()]?.code || '';
     }
+
+    return '';
   });
 
-  currentLanguage = computed<CodeLanguage>(() => {
-    if (this.activeTab() === 'install') {
-      return 'bash';
-    }
-    return this.activeLang();
+  currentLanguage = computed(() => {
+    if (this.activeTab() === 'install') return 'bash';
+
+    const currentFiles = this.files();
+    return currentFiles[this.activeFileIndex()]?.language || 'typescript';
   });
 
   setTab(tab: PlaygroundTab) {
     this.activeTab.set(tab);
   }
 
-  setLang(lang: 'markup' | 'scss' | 'typescript') {
-    this.activeLang.set(lang);
+  setFileIndex(index: number) {
+    this.activeFileIndex.set(index);
   }
+
+  copyCode() {
+    const textToCopy = this.currentCodeDisplay();
+    if (textToCopy) {
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        this.copied.set(true);
+        setTimeout(() => this.copied.set(false), 2000);
+      });
+    }
+  }
+
 }
+

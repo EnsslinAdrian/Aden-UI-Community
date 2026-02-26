@@ -1,7 +1,7 @@
 :host {
   display: block;
   width: 100%;
-  height: 100vh;
+  min-height: calc(100dvh - calc(--aden-header-height));
 }
 
 .content-wrapper {
@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
   background-color: #000;
-  max-width: var(--max-width);
+  max-width: var(--aden-max-width);
 }
 
 .lab-layout {
@@ -30,7 +30,7 @@
   z-index: 10;
 
   .back-btn {
-    color: var(--text-muted);
+    color: var(--aden-text-muted-gray);
     font-size: 13px;
     text-decoration: none;
     font-weight: 500;
@@ -47,7 +47,7 @@
   }
 
   .lab-indicator {
-    font-family: var(--font-mono);
+    font-family: var(--aden-code-font);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 2px;
