@@ -1,16 +1,15 @@
 .playground-container {
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  background-color: var(--dark-grey);
+  background-color: var(--aden-bg-hover);
   overflow: hidden;
   margin-bottom: 30px;
 }
 
 .tabs-nav {
   display: flex;
-  background: #111;
-  border-bottom: 1px solid var(--border-color);
-  padding: 0 16px;
+  background: #18181b;
+  border-bottom: 1px solid #27272a;
   height: 44px;
   box-sizing: border-box;
 
@@ -25,7 +24,7 @@
     .tab-btn {
       background: none;
       border: none;
-      color: var(--text-muted);
+      color: var(--aden-text-muted-gray);
       padding: 0 16px;
       font-size: 13px;
       cursor: pointer;
@@ -34,16 +33,16 @@
       box-sizing: border-box;
 
       &:hover {
-        color: var(--primary-white);
+        color: var(--aden-white);
       }
 
       &:hover {
-        color: var(--primary-white);
+        color: var(--aden-white);
       }
 
       &.active {
-        color: var(--primary-white);
-        border-bottom-color: var(--accent-color);
+        color: var(--aden-white);
+        border-bottom-color: var(--aden-accent-blue);
       }
     }
   }
@@ -52,7 +51,7 @@
 .preview-canvas {
   width: 100%;
   min-height: 400px;
-  background-color: #030303;
+  background-color: var(--aden-pure-black);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -68,34 +67,4 @@
   }
 }
 
-.code-section {
-  background: #0d0d0d;
 
-  .sub-nav {
-    display: flex;
-    gap: 8px;
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--border-color);
-
-    button {
-      background: #18181b;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
-
-      &:hover {
-        border-color: var(--text-muted);
-      }
-
-      &.active {
-        color: var(--accent-color);
-        border-color: var(--accent-color);
-        background: rgba(59, 130, 246, 0.1);
-      }
-    }
-  }
-}

@@ -1,92 +1,174 @@
-.content-wrapper {
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--dark-grey);
+  background-color: rgba(9, 9, 11, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-header {
+.main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: var(--max-width);
-  height: var(--header-height);
+  max-width: var(--aden-max-width);
+  height: var(--aden-header-height);
   padding: 0 24px;
   box-sizing: border-box;
-}
+  border-bottom: 1px solid var(--border-color);
 
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-
-  @media (max-width: 600px) {
-    gap: 16px;
+  @media (max-width: 768px) {
+    padding: 0 16px;
   }
 
-  a {
+  @media (max-width: 480px) {
+    padding: 0 12px;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .logo-img {
+    height: 28px;
+    width: auto;
+
+    @media (max-width: 480px) {
+      height: 22px;
+    }
+  }
+
+  .logo-suffix {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--aden-accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+.nav-container {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    gap: 4px;
+    padding: 3px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  .nav-link {
     text-decoration: none;
-    color: var(--text-muted);
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    position: relative;
-    padding: 4px 0;
+    color: var(--aden-text-muted-gray);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
 
     &:hover {
-      color: var(--primary-white);
+      color: var(--aden-white);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     &.active {
-      color: var(--accent-color);
+      color: var(--aden-white);
+      background: var(--aden-surface-light);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
   }
 }
 
-.header-left, .header-right {
+.header-left,
+.header-right {
   flex: 1;
   display: flex;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    flex: unset;
+  }
 }
 
 .header-right {
   justify-content: flex-end;
 }
 
-.social-icons {
+.social-group {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    gap: 4px;
+  }
 }
 
-.icon-btn {
+.social-btn {
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  border-radius: 10px;
   background: transparent;
-  padding: 6px;
-  border-radius: 4px;
-  transition: all 0.2s;
-  box-sizing: border-box;
-  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 
   @media (max-width: 768px) {
     display: none;
   }
 
   img {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    width: 18px;
+    height: 18px;
+    opacity: 0.6;
+    transition: all 0.2s;
   }
 
   &:hover {
-    background-color: var(--bg-hover);
+    background: var(--aden-bg-hover);
+    border-color: var(--border-color);
 
     img {
       opacity: 1;
+      transform: scale(1.1);
     }
   }
 }

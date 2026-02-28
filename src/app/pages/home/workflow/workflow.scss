@@ -1,0 +1,78 @@
+.workflow-grid {
+  display: grid;
+  grid-template-areas:
+    "workspace workspace"
+    "logic documentation"
+    "styling styling";
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @media (max-width: 1100px) {
+    grid-template-areas:
+      "workspace"
+      "logic"
+      "documentation"
+      "styling";
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
+}
+
+.grid-area {
+  background: #0d0d0d;
+  border: 1px solid var(--aden-border-gray);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    border-radius: 16px;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 12px;
+  }
+
+  &:hover {
+    border-color: #444;
+  }
+
+  &.workspace {
+    grid-area: workspace;
+
+    @media (max-width: 1100px) {
+      grid-area: workspace;
+    }
+  }
+
+  &.logic {
+    grid-area: logic;
+
+    @media (max-width: 1100px) {
+      grid-area: logic;
+    }
+  }
+
+  &.documentation {
+    grid-area: documentation;
+
+    @media (max-width: 1100px) {
+      grid-area: documentation;
+    }
+  }
+
+  &.styling {
+    grid-area: styling;
+
+    @media (max-width: 1100px) {
+      grid-area: styling;
+    }
+  }
+}

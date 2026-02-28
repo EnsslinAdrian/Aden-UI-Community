@@ -1,53 +1,44 @@
-import { Component, computed, input, signal } from '@angular/core';
-import { CodeHighlight } from "../code-highlight/code-highlight";
+import { Component, input, signal } from '@angular/core';
 import { UiPlaygroundHeader } from "./ui-playground-header/ui-playground-header";
 import { CommonModule } from '@angular/common';
+import { UiPlaygroundViewport } from "./ui-playground-viewport/ui-playground-viewport";
 
-type PlaygroundTab = 'preview' | 'code' | 'install';
-type CodeLanguage = 'markup' | 'scss' | 'typescript' | 'bash';
+export interface PlaygroundFile {
+  name: string;
+  language: 'markup' | 'scss' | 'typescript' | 'bash' | 'markdown';
+  code: string;
+}
+
+export interface MetaData {
+  title: string;
+  description: string;
+  username: string;
+}
+
+type PlaygroundTab = 'preview' | 'docs' | 'code' | 'install';
 
 @Component({
   selector: 'app-ui-playground',
   standalone: true,
-  imports: [CodeHighlight, UiPlaygroundHeader, CommonModule],
+  imports: [UiPlaygroundHeader, CommonModule, UiPlaygroundViewport],
   templateUrl: './ui-playground.html',
   styleUrl: './ui-playground.scss',
 })
 export class UiPlayground {
-  meta = input<any>();
-  htmlCode = input<string>('');
-  scssCode = input<string>('');
-  tsCode = input<string>('');
+  meta = input<MetaData>();
+  files = input<PlaygroundFile[]>([]);
   installCode = input<string>('');
+  docsCode = input<string>('');
 
   activeTab = signal<PlaygroundTab>('preview');
-  activeLang = signal<'markup' | 'scss' | 'typescript'>('markup');
-
-  currentCodeDisplay = computed(() => {
-    if (this.activeTab() === 'install') {
-      return this.installCode();
-    }
-
-    switch (this.activeLang()) {
-      case 'markup': return this.htmlCode();
-      case 'scss': return this.scssCode();
-      case 'typescript': return this.tsCode();
-      default: return '';
-    }
-  });
-
-  currentLanguage = computed<CodeLanguage>(() => {
-    if (this.activeTab() === 'install') {
-      return 'bash';
-    }
-    return this.activeLang();
-  });
+  activeFileIndex = signal<number>(0);
 
   setTab(tab: PlaygroundTab) {
     this.activeTab.set(tab);
+    if (tab === 'code') this.activeFileIndex.set(0);
   }
 
-  setLang(lang: 'markup' | 'scss' | 'typescript') {
-    this.activeLang.set(lang);
+  setFileIndex(index: number) {
+    this.activeFileIndex.set(index);
   }
 }

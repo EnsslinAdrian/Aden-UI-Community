@@ -1,0 +1,53 @@
+<div class="step-container styling-step">
+  <div class="step-header">
+    <span class="step-num">Step 04</span>
+    <h3>Design Tokens & Styling</h3>
+    <p>Maintain UI consistency. Never use hardcoded colors. Always define your palette in the <code>:host</code> selector.</p>
+  </div>
+
+  <div class="styling-content">
+    <div class="code-editor-visual scss-style">
+      <div class="editor-header">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="file-tab active">component.scss</div>
+      </div>
+      <div class="editor-body">
+        <div class="code-line"><span class="keyword">:host</span> &#123;</div>
+        <div class="code-line indent">
+          <span class="prop">--aden-primary-green</span>: <span class="string">#4ade80</span>;
+        </div>
+        <div class="code-line indent">
+          <span class="prop">--aden-surface-dark</span>: <span class="string">#1a1a1a</span>;
+        </div>
+        <div class="code-line indent spacer"></div>
+        <div class="code-line indent">
+          <span class="prop">--aden-custom-glow</span>: <span class="string">rgba(74, 222, 128, 0.2)</span>;
+        </div>
+        <div class="code-line"> &#125;</div>
+        <div class="code-line spacer"></div>
+        <div class="code-line"><span class="keyword">.my-box</span> &#123;</div>
+        <div class="code-line indent">
+          <span class="keyword">background</span>: <span class="prop">var(--aden-surface-dark)</span>;
+        </div>
+        <div class="code-line"> &#125;</div>
+      </div>
+    </div>
+
+    <div class="token-rules">
+      <div class="rule-card">
+        <h4>The Source: <code>_variables.scss</code></h4>
+        <p>Before styling, check the global variable file. Copy the tokens you need into your component's <code>:host</code>.</p>
+      </div>
+
+      <div class="rule-card highlighted">
+        <h4>The <code>--aden-</code> Prefix</h4>
+        <p>If you need a color that isn't in the global file, you must prefix it with <strong>--aden-</strong>. This ensures compatibility with the entire library.</p>
+      </div>
+
+      <div class="rule-card">
+        <h4>No Hardcoded Values</h4>
+        <p>Avoid using raw hex or rgb values inside your classes. Reference them via <code>var()</code> to keep the component themeable.</p>
+      </div>
+    </div>
+  </div>
+</div>

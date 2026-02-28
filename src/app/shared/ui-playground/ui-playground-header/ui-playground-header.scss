@@ -1,7 +1,7 @@
 .meta-header {
-  padding: 16px 24px;
-  background-color: #0c0c0e;
-  border-bottom: 1px solid var(--border-color);
+  padding: 16px;
+  background-color: var(--aden-bg-hover);
+  border-bottom: 1px solid #27272a;
   display: flex;
   justify-content: space-between;
 
@@ -9,7 +9,6 @@
     flex-direction: column;
     gap: 10px;
     justify-content: start;
-
   }
 
   @media (max-width: 420px) {
@@ -26,7 +25,7 @@
 
 .comp-desc {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--aden-text-muted-gray);
   margin: 0;
 }
 
@@ -38,13 +37,13 @@
   .label {
     font-size: 10px;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--aden-text-muted-gray);
     letter-spacing: 0.5px;
   }
 
   .username {
     font-size: 13px;
-    color: var(--accent-color);
+    color: var(--aden-accent-blue);
     font-weight: 500;
   }
 }

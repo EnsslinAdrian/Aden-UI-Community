@@ -1,0 +1,64 @@
+<div class="step-container logic-step">
+  <div class="step-header">
+    <span class="step-num">Step 02</span>
+    <h3>The Logic Bridge</h3>
+    <p>Connect your source files to the UI Playground using modern Import Attributes.</p>
+  </div>
+
+  <div class="logic-content">
+    <div class="code-editor-visual">
+      <div class="editor-header">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="file-tab active">my-contribution.ts</div>
+      </div>
+      <div class="editor-body">
+        <div class="code-line">
+          <span class="keyword">@ts-expect-error</span>
+        </div>
+        <div class="code-line">
+          <span class="keyword">import</span> html <span class="keyword">from</span> <span
+            class="string">'./comp.html'</span> <span class="keyword">with</span> &#123; loader: <span
+            class="string">'text'</span> &#125;;
+        </div>
+        <div class="code-line spacer"></div>
+        <div class="code-line">
+          <span class="prop">files</span>: [
+        </div>
+        <div class="code-line indent">
+          &#123; name: <span class="string">'component.html'</span>, language: <span class="string">'markup'</span>,
+          code: html &#125;
+        </div>
+        <div class="code-line">];</div>
+      </div>
+    </div>
+
+    <div class="tech-guide">
+      <div class="guide-card">
+        <div class="guide-icon">⚡</div>
+        <div class="guide-text">
+          <h4>Loader Attributes</h4>
+          <p>Always use <code>with &#123; loader: 'text' &#125;</code>. This tells the engine to treat the file as a
+            string instead of executing it.</p>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">🛠️</div>
+        <div class="guide-text">
+          <h4>PrismJS Mapping</h4>
+          <p>Important: <strong>HTML</strong> files must use <code>language: 'markup'</code> in the array to enable
+            proper syntax highlighting.</p>
+        </div>
+      </div>
+
+      <div class="guide-card warning">
+        <div class="guide-icon">⚠️</div>
+        <div class="guide-text">
+          <h4>Bypass Check</h4>
+          <p>Use <code>@ts-expect-error</code> above your imports. This is required until TypeScript officially supports
+            the Esbuild text loader syntax.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

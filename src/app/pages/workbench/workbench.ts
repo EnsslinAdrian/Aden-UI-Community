@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MyContribution } from "../../contributions/my-contribution/my-contribution";
 
 @Component({
@@ -8,5 +8,9 @@ import { MyContribution } from "../../contributions/my-contribution/my-contribut
   styleUrl: './workbench.scss',
 })
 export class Workbench {
+  isSidebarOpen = signal(true);
 
+  toggleSidebar() {
+    this.isSidebarOpen.update(v => !v);
+  }
 }

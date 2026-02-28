@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Landing } from "./landing/landing";
+import { Workflow } from "./workflow/workflow";
+import { Requirements } from "./requirements/requirements";
+import { Submission } from "./submission/submission";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [Landing, Workflow, Requirements, Submission],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

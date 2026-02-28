@@ -1,0 +1,39 @@
+<div class="step-container">
+  <div class="step-header">
+    <span class="step-num">Step 01</span>
+    <h3>Advanced File Architecture</h3>
+    <p>Structure your contribution like a professional package. The engine supports deep hierarchies.</p>
+  </div>
+
+  <div class="workspace-content">
+    <div class="tree-viewer">
+      <div class="tree-node root">📂 my-contribution</div>
+      <div class="tree-node folder">├── 📂 interfaces <span class="tag">Optional</span></div>
+      <div class="tree-node folder">├── 📂 services <span class="tag">Optional</span></div>
+      <div class="tree-node folder active">├── 📂 my-component <span class="tag main">Core</span></div>
+      <div class="tree-node file">│&nbsp;&nbsp;&nbsp;├── 📄 my-component.ts</div>
+      <div class="tree-node file">│&nbsp;&nbsp;&nbsp;└── 📄 my-component.html</div>
+      <div class="tree-node file highlight">├── 📄 docs.md <span class="tag info">Required</span></div>
+      <div class="tree-node file highlight">└── 📄 my-contribution.ts <span class="tag info">Required</span></div>
+    </div>
+
+    <div class="file-legend">
+      <div class="legend-item">
+        <strong>📂 my-component/</strong>
+        <p>The heart of your logic. You can rename this folder to match your component's name. Child components should be placed on the same level, not nested inside this folder.</p>
+      </div>
+      <div class="legend-item">
+        <strong>📄 docs.md</strong>
+        <p>Replacement for JSDoc. Fill the API tables here; they render automatically in the Docs tab.</p>
+      </div>
+      <div class="legend-item">
+        <strong>📄 my-contribution.ts</strong>
+        <p>The "Bridge". This file tells the Playground which files to show in the code viewer.</p>
+      </div>
+      <div class="legend-item">
+        <strong>📄 my-contribution.html</strong>
+        <p>The Wrapper. Simply embed your component's selector here to see it in the Lab.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -23,7 +23,6 @@ export class CodeHighlight {
       const codeValue = this.code();
 
       if (el) {
-        // Sicherstellen, dass Prism die Sprache kennt (markup = html)
         const lang = this.language() === 'html' ? 'markup' : this.language();
         el.nativeElement.className = `language-${lang}`;
         el.nativeElement.textContent = codeValue;

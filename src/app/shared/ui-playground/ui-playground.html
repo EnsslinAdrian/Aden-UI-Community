@@ -4,16 +4,15 @@
   <div class="playground-body">
     <div class="tabs-nav">
       <div class="tab-group">
-        <button class="tab-btn" [class.active]="activeTab() === 'preview'" (click)="setTab('preview')">
-          Preview
-        </button>
-        <button class="tab-btn" [class.active]="activeTab() === 'code'" (click)="setTab('code')">
-          Code
-        </button>
+        <button class="tab-btn" [class.active]="activeTab() === 'preview'" (click)="setTab('preview')">Preview</button>
+        @if (docsCode()) {
+        <button class="tab-btn" [class.active]="activeTab() === 'docs'" (click)="setTab('docs')">Docs</button>
+        }
+        @if (files().length > 0) {
+        <button class="tab-btn" [class.active]="activeTab() === 'code'" (click)="setTab('code')">Code</button>
+        }
         @if (installCode()) {
-        <button class="tab-btn" [class.active]="activeTab() === 'install'" (click)="setTab('install')">
-          Install
-        </button>
+        <button class="tab-btn" [class.active]="activeTab() === 'install'" (click)="setTab('install')">Install</button>
         }
       </div>
     </div>
@@ -25,19 +24,11 @@
       </div>
       }
 
-      @if (activeTab() === 'code' || activeTab() === 'install') {
-      <div class="code-section">
-        @if (activeTab() === 'code') {
-        <div class="sub-nav">
-          <button (click)="setLang('markup')" [class.active]="activeLang() === 'markup'">HTML</button>
-          <button (click)="setLang('scss')" [class.active]="activeLang() === 'scss'">SCSS</button>
-          <button (click)="setLang('typescript')" [class.active]="activeLang() === 'typescript'">TS</button>
-        </div>
-        }
-
-        <app-code-highlight [code]="currentCodeDisplay()" [language]="currentLanguage()">
-        </app-code-highlight>
-      </div>
+      @if (activeTab() !== 'preview') {
+      <app-ui-playground-viewport [activeTab]="$any(activeTab())" [files]="files()"
+        [activeFileIndex]="activeFileIndex()" [docsCode]="docsCode()" [installCode]="installCode()"
+        (fileIndexChange)="setFileIndex($event)">
+      </app-ui-playground-viewport>
       }
     </div>
   </div>

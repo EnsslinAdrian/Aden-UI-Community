@@ -2,48 +2,80 @@
 
 :root {
   // Colors
-  --dark-grey: #09090b;
+  --aden-bg-black: #09090b;
+  --aden-pure-black: #000000;
+  --aden-border-gray: #333333;
+  --aden-text-muted-gray: #a1a1aa;
   --border-color: #27272a;
-  --text-muted: #a1a1aa;
-  --primary-white: #ffffff;
-  --primary-white-70: rgba(255, 255, 255, 0.7);
-  --primary-white-90: rgba(255, 255, 255, 0.9);
-  --primary-black: #000000;
-  --success-color: #22c55e;
-  --danger-color: #ef4444;
+
+  --aden-white: #ffffff;
+  --aden-white-alpha-05: rgba(255, 255, 255, 0.05);
+  --aden-white-alpha-10: rgba(255, 255, 255, 0.1);
+  --aden-white-alpha-50: rgba(255, 255, 255, 0.5);
+  --aden-white-alpha-70: rgba(255, 255, 255, 0.7);
+  --aden-white-alpha-90: rgba(255, 255, 255, 0.9);
+
+  --aden-primary-dark-green: #22c55e;
+  --aden-danger-red: #ef4444;
 
   // Hover Colors
-  --bg-hover: #18181b;
-  --accent-color: #3b82f6;
+  --aden-bg-hover: #18181b;
+  --aden-accent-blue: #3b82f6;
+  --aden-info-blue: #60a5fa;
 
   // Code & Cards
-  --code-bg: #111111;
+  --aden-code-bg-black: #111111;
+  --aden-surface-light: #242427;
 
-  // Syntax Highlighting (uniform for all guides)
-  --syntax-keyword: #c084fc;
-  --syntax-string: #a5f3fc;
-  --syntax-type: #fcd34d;
-  --syntax-tag: #f472b6;
-  --syntax-attr: #60a5fa;
-  --syntax-comment: #52525b;
+  // Syntax Highlighting
+  --aden-syntax-keyword: #c084fc;
+  --aden-syntax-string: #a5f3fc;
+  --aden-syntax-type: #fcd34d;
+  --aden-syntax-tag: #f472b6;
+  --aden-syntax-attr: #60a5fa;
+  --aden-syntax-comment: #52525b;
 
   // Effects
-  --glass-blur: 12px;
+  --aden-glass-blur: 12px;
 
   // Sizes
-  --header-height: 65px;
-  --sidebar-width: 250px;
-  --sidebar-responsive-width: 900px;
-  --max-width: 1920px;
+  --aden-header-height: 65px;
+  --aden-max-width: 1920px;
 
   // Fonts
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --main-font: 'Onest';
+  --aden-code-font: 'JetBrains Mono', 'Fira Code', monospace;
+  --aden-main-font: 'Onest';
 }
 
 body {
-  background-color: var(--dark-grey);
-  color: var(--primary-white);
-  font-family: var(--main-font), sans-serif;
+  background-color: var(--aden-bg-black);
+  color: var(--aden-white);
+  font-family: var(--aden-main-font), sans-serif;
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #27272a;
+  border-radius: 99px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b;
+  border: 2px solid transparent;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a transparent;
 }

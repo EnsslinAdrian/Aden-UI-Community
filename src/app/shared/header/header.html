@@ -1,22 +1,27 @@
-<div class="content-wrapper">
-  <header>
+<div class="header-wrapper">
+  <header class="main-header">
     <div class="header-left">
-      <img src="/img/logo/aden_logo.svg" alt="Aden UI" height="30" routerLink="/" style="cursor: pointer;">
+      <div class="logo-container" routerLink="/">
+        <img src="/img/logo/aden_logo.svg" alt="Aden UI" class="logo-img">
+        <span class="logo-suffix">Community</span>
+      </div>
     </div>
 
-    <nav class="nav-links">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Guide</a>
-      <a routerLink="/workbench" routerLinkActive="active">Workbench</a>
+    <nav class="nav-container">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+        <span class="nav-text">Guide</span>
+      </a>
+      <a routerLink="/workbench" routerLinkActive="active" class="nav-link">
+        <span class="nav-text">Workbench</span>
+      </a>
     </nav>
 
     <div class="header-right">
-      <div class="social-icons">
-        <a href="https://github.com/EnsslinAdrian/Aden-UI-Community" target="_blank" class="icon-btn" title="GitHub">
+      <div class="social-group">
+        <a href="https://github.com/EnsslinAdrian/Aden-UI-Community" target="_blank" class="social-btn" title="GitHub">
           <img src="img/icons/social-media/github.svg" alt="GitHub">
         </a>
-
-        <a href="https://www.linkedin.com/in/adrian-en%C3%9Flin-b5574b315/" target="_blank" class="icon-btn"
-          title="LinkedIn">
+        <a href="https://www.linkedin.com/in/adrian-en%C3%9Flin-b5574b315/" target="_blank" class="social-btn" title="LinkedIn">
           <img src="img/icons/social-media/linkedin.svg" alt="LinkedIn">
         </a>
       </div>
