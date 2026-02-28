@@ -1,31 +1,58 @@
 <section class="submission-area fade-in">
   <div class="submission-card">
-    <div class="content">
-      <div class="badge">Step 3</div>
-      <app-typografie text="Push & Submit" size="large" color="white" [weight]="900"></app-typografie>
-      <p>Finished your masterpiece? Follow these steps to get it listed on the official Aden UI library.</p>
+    <div class="glow-orb"></div>
 
-      <div class="process-steps">
-        <div class="step">
-          <span class="num">1</span>
-          <span>Push changes to your <strong>public GitHub Fork</strong>.</span>
+    <div class="submission-content">
+      <div class="final-badge">Final Step</div>
+      <app-typografie text="Push & Submit" size="xlarge" color="white" [weight]="900"></app-typografie>
+      <p class="description">
+        Your component is ready for the world. Once submitted, our team will review your code for performance
+        and design consistency before merging it into the official library.
+      </p>
+
+      <div class="process-list">
+        <div class="process-item">
+          <div class="icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </div>
+          <div class="text">
+            <strong>Public Fork</strong>
+            <span>Push your changes to your GitHub Fork.</span>
+          </div>
         </div>
-        <div class="step">
-          <span class="num">2</span>
-          <span>Ensure all files (HTML, SCSS, TS, Docs) are committed.</span>
+
+        <div class="process-item">
+          <div class="icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          </div>
+          <div class="text">
+            <strong>Check Files</strong>
+            <span>Ensure <code>docs.md</code> and all logic files are included.</span>
+          </div>
         </div>
-        <div class="step">
-          <span class="num">3</span>
-          <span>Copy your Fork URL and submit it via the form below.</span>
+
+        <div class="process-item">
+          <div class="icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div class="text">
+            <strong>Submit URL</strong>
+            <span>Copy your repository URL and head over to Aden UI.</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="actions">
-      <button routerLink="/contribution/form" class="submit-btn">
-        <span>Open Submission Form</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+    <div class="submission-actions">
+      <a href="https://adenui.com/contribution" target="_blank" class="launch-btn">
+        <span class="btn-text">Go to adenui.com</span>
+        <div class="btn-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
+      </a>
     </div>
   </div>
 </section>

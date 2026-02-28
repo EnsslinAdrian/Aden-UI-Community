@@ -1,10 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { MyContribution } from "../../contributions/my-contribution/my-contribution";
-import { Typografie } from "../../shared/typografie/typografie";
 
 @Component({
   selector: 'app-workbench',
-  imports: [MyContribution, Typografie],
+  imports: [MyContribution],
   templateUrl: './workbench.html',
   styleUrl: './workbench.scss',
 })

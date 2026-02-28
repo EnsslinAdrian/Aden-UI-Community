@@ -1,0 +1,263 @@
+.step-container {
+  padding: 40px;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 32px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
+}
+
+.step-header {
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 16px;
+  }
+
+  .step-num {
+    color: var(--aden-accent-blue);
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 24px;
+    color: #fff;
+    margin: 8px 0;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    color: var(--aden-text-muted-gray);
+    font-size: 15px;
+    max-width: 500px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.logic-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
+}
+
+.code-editor-visual {
+  background: #050505;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+
+  @media (max-width: 768px) {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
+  .editor-header {
+    background: #111;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #1a1a1a;
+
+    @media (max-width: 480px) {
+      padding: 8px 12px;
+      gap: 12px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+
+      span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #333;
+
+        @media (max-width: 480px) {
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+
+    .file-tab {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--aden-accent-blue);
+      position: relative;
+
+      @media (max-width: 480px) {
+        font-size: 10px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -11px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--aden-accent-blue);
+
+        @media (max-width: 480px) {
+          bottom: -9px;
+        }
+      }
+    }
+  }
+
+  .editor-body {
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      padding: 16px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px;
+      font-size: 11px;
+      overflow-x: auto;
+    }
+
+    .code-line {
+      white-space: nowrap;
+
+      &.indent {
+        padding-left: 20px;
+
+        @media (max-width: 480px) {
+          padding-left: 12px;
+        }
+      }
+
+      &.spacer { height: 12px; }
+
+      .comment { color: #52525b; }
+      .keyword { color: var(--aden-syntax-keyword); }
+      .string { color: var(--aden-syntax-string); }
+      .prop { color: var(--aden-syntax-tag); }
+    }
+  }
+}
+
+.tech-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
+
+  .guide-card {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid var(--aden-border-gray);
+    transition: transform 0.2s;
+
+    @media (max-width: 768px) {
+      padding: 14px;
+      gap: 12px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px;
+      gap: 10px;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      background: rgba(255, 255, 255, 0.04);
+
+      @media (max-width: 768px) {
+        transform: translateX(3px);
+      }
+
+      @media (max-width: 480px) {
+        transform: none;
+      }
+    }
+
+    &.warning { border-color: rgba(251, 191, 36, 0.3); }
+
+    .guide-icon {
+      font-size: 18px;
+      margin-top: 2px;
+
+      @media (max-width: 480px) {
+        font-size: 16px;
+      }
+    }
+
+    .guide-text {
+      h4 {
+        margin: 0 0 4px 0;
+        font-size: 14px;
+        color: var(--aden-white);
+
+        @media (max-width: 480px) {
+          font-size: 13px;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 12px;
+        color: var(--aden-text-muted-gray);
+        line-height: 1.4;
+
+        @media (max-width: 480px) {
+          font-size: 11px;
+        }
+      }
+
+      code { color: var(--aden-info-blue); }
+    }
+  }
+}

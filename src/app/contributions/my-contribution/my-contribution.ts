@@ -23,7 +23,11 @@ import toggleService from './services/services.ts' with { loader: 'text' };
   styleUrls: ['./my-contribution.scss'],
 })
 export class MyContribution {
-  meta: MetaData = { title: 'Insert title here', description: 'Insert description here', username: 'Insert username from AdenUi here' };
+  meta: MetaData = {
+    title: 'Insert title here',
+    description: 'Insert description here',
+    username: 'Insert username from AdenUi here'
+  };
 
   install = `Here you can provide installation instructions for your contribution. For example:`;
 

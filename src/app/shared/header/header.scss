@@ -8,7 +8,6 @@
   background-color: rgba(9, 9, 11, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
 }
 
 .main-header {
@@ -21,6 +20,14 @@
   padding: 0 24px;
   box-sizing: border-box;
   border-bottom: 1px solid var(--border-color);
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 12px;
+  }
 }
 
 .logo-container {
@@ -30,11 +37,17 @@
   cursor: pointer;
   transition: opacity 0.2s;
 
-  &:hover { opacity: 0.8; }
+  &:hover {
+    opacity: 0.8;
+  }
 
   .logo-img {
     height: 28px;
     width: auto;
+
+    @media (max-width: 480px) {
+      height: 22px;
+    }
   }
 
   .logo-suffix {
@@ -48,11 +61,12 @@
     border-radius: 4px;
     margin-left: 4px;
 
-    @media (max-width: 600px) { display: none; }
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 }
 
-/* --- CENTER: NAV --- */
 .nav-container {
   display: flex;
   gap: 8px;
@@ -61,6 +75,15 @@
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    gap: 4px;
+    padding: 3px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 
   .nav-link {
     text-decoration: none;
@@ -72,6 +95,12 @@
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
 
     &:hover {
       color: var(--aden-white);
@@ -87,18 +116,28 @@
   }
 }
 
-/* --- RIGHT: SOCIAL --- */
-.header-left, .header-right {
+.header-left,
+.header-right {
   flex: 1;
   display: flex;
   box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    flex: unset;
+  }
 }
 
-.header-right { justify-content: flex-end; }
+.header-right {
+  justify-content: flex-end;
+}
 
 .social-group {
   display: flex;
   gap: 8px;
+
+  @media (max-width: 768px) {
+    gap: 4px;
+  }
 }
 
 .social-btn {
@@ -111,6 +150,10 @@
   background: transparent;
   border: 1px solid transparent;
   transition: all 0.2s ease;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   img {
     width: 18px;
@@ -127,9 +170,5 @@
       opacity: 1;
       transform: scale(1.1);
     }
-  }
-
-  @media (max-width: 768px) {
-    display: none; // Oder in ein Hamburger-Menü schieben
   }
 }

@@ -1,7 +1,21 @@
 :host {
   display: block;
   width: 100%;
-  min-height: calc(100dvh - calc(--aden-header-height));
+  min-height: calc(100dvh - var(--aden-header-height));
+  box-sizing: border-box;
+  padding: 40px;
+
+  @media (max-width: 1024px) {
+    padding: 40px 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 8px;
+  }
 }
 
 

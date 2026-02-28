@@ -1,0 +1,251 @@
+.step-container {
+  padding: 40px;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 28px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
+}
+
+.step-header {
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 16px;
+  }
+
+  .step-num {
+    color: var(--aden-accent-blue);
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @media (max-width: 480px) {
+      font-size: 11px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    color: #fff;
+    margin: 8px 0;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    color: var(--aden-text-muted-gray);
+    font-size: 15px;
+    max-width: 500px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.docs-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
+}
+
+.markdown-preview-box {
+  background: #080808;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  padding: 24px;
+  font-family: var(--font-mono);
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .box-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #1a1a1a;
+    color: #52525b;
+    font-size: 9px;
+    padding: 4px 10px;
+    border-bottom-left-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 800;
+
+    @media (max-width: 480px) {
+      font-size: 8px;
+      padding: 3px 8px;
+    }
+  }
+
+  .md-line {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #a1a1aa;
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      font-size: 11px;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 10px;
+    }
+
+    &.title {
+      color: var(--aden-white);
+      font-weight: 700;
+      margin-bottom: 12px;
+
+      @media (max-width: 480px) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &.table-head {
+      color: var(--aden-accent-blue);
+      opacity: 0.8;
+    }
+
+    &.spacer {
+      height: 16px;
+
+      @media (max-width: 480px) {
+        height: 10px;
+      }
+    }
+  }
+}
+
+.docs-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
+
+  .rule-box {
+    .rule-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+
+      @media (max-width: 480px) {
+        gap: 8px;
+        margin-bottom: 4px;
+      }
+
+      .bullet {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #333;
+        flex-shrink: 0;
+
+        &.accent {
+          background: var(--aden-accent-blue);
+          box-shadow: 0 0 10px var(--aden-accent-blue);
+        }
+
+        &.primary {
+          background: var(--aden-primary-green);
+          box-shadow: 0 0 10px var(--aden-primary-green);
+        }
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 14px;
+        color: var(--aden-white);
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--aden-text-muted-gray);
+      line-height: 1.5;
+      padding-left: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+        padding-left: 14px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 11px;
+        padding-left: 12px;
+      }
+    }
+
+    code {
+      color: var(--aden-info-blue);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1px 4px;
+      border-radius: 3px;
+
+      @media (max-width: 480px) {
+        padding: 1px 3px;
+        font-size: 10px;
+      }
+    }
+  }
+}

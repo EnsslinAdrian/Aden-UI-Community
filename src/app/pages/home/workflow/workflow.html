@@ -1,61 +1,26 @@
+<section class="workflow-container">
+
   <div class="workflow-grid">
 
-    <!-- 1. Workspace Card -->
-    <div class="concept-card">
-      <div class="card-header">
-        <span class="step-badge">01</span>
-        <app-typografie text="Advanced Workspace" size="small" color="white" [weight]="700"></app-typografie>
-      </div>
-      <p class="card-desc">You are no longer limited to single files. Structure your component like a real production-ready package.</p>
-      <ul class="feature-list">
-        <li>Create <strong>sub-folders</strong> for interfaces & services.</li>
-        <li>Build <strong>child-components</strong> within your workspace.</li>
-        <li>The system detects all files automatically.</li>
-      </ul>
-      <div class="file-tree-preview">
-        <div class="tree-line">📂 my-contribution</div>
-        <div class="tree-line indent">📂 child-components</div>
-        <div class="tree-line indent">📂 interfaces</div>
-        <div class="tree-line indent">📄 docs.md</div>
-        <div class="tree-line indent">📄 my-contribution.ts</div>
-      </div>
+    <!-- STEP 1: THE WORKSPACE (Große Area für Dateibaum & Erklärungen) -->
+    <div class="grid-area workspace">
+      <app-step-one></app-step-one>
     </div>
 
-    <!-- 2. Import Logic Card -->
-    <div class="concept-card highlighted">
-      <div class="card-header">
-        <span class="step-badge">02</span>
-        <app-typografie text="Raw Loader Magic" size="small" color="white" [weight]="700"></app-typografie>
-      </div>
-      <p class="card-desc">Use the <strong>Esbuild Text Loader</strong> to import your source code as strings for the playground tabs.</p>
-
-      <div class="code-window">
-        <div class="window-header">
-          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="file-name">my-contribution.ts</span>
-        </div>
-        <code class="code-snippet">
-          <span class="comment">// @ts-expect-error</span><br>
-          <span class="keyword">import</span> code <span class="keyword">from</span> <span class="string">'./file.ts'</span><br>
-          <span class="keyword">with</span> &#123; loader: <span class="string">'text'</span> &#125;;
-        </code>
-      </div>
+    <!-- STEP 2: THE LOGIC (Fokus auf Importe & Playground Bridge) -->
+    <div class="grid-area logic">
+      <app-step-two></app-step-two>
     </div>
 
-    <!-- 3. Documentation Card -->
-    <div class="concept-card">
-      <div class="card-header">
-        <span class="step-badge">03</span>
-        <app-typografie text="Fill the Blueprint" size="small" color="white" [weight]="700"></app-typografie>
-      </div>
-      <p class="card-desc">The <code>docs.md</code> file is already created for you. Simply fill it out using our API-Reference standard.</p>
-      <div class="blueprint-box">
-        <div class="bp-line title"># API Reference</div>
-        <div class="bp-line">## Inputs & Properties</div>
-        <div class="bp-line muted">| Name | Type | Description |</div>
-        <div class="bp-line muted">| :--- | :--- | :--- |</div>
-      </div>
-      <p class="card-note">Automatically rendered in the <strong>Docs</strong> tab.</p>
+    <!-- STEP 3: THE DOCS (Fokus auf Markdown & Blueprint) -->
+    <div class="grid-area documentation">
+      <app-step-three></app-step-three>
+    </div>
+
+    <div class="grid-area styling">
+      <app-step-for></app-step-for>
     </div>
 
   </div>
+
+</section>

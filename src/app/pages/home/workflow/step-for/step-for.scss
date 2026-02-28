@@ -1,0 +1,236 @@
+.step-container {
+  padding: 40px;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
+}
+
+.step-header {
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
+
+  .step-num {
+    color: var(--aden-accent-blue);
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 24px;
+    color: #fff;
+    margin: 8px 0;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    color: var(--aden-text-muted-gray);
+    font-size: 15px;
+    max-width: 500px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      max-width: 100%;
+    }
+  }
+}
+
+.styling-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: flex-start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
+}
+
+.code-editor-visual {
+  background: #050505;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 480px) {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .editor-header {
+    background: #111;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #1a1a1a;
+
+    @media (max-width: 480px) {
+      padding: 8px 12px;
+      gap: 12px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+
+      span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #333;
+
+        @media (max-width: 480px) {
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+
+    .file-tab {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--aden-accent-blue);
+
+      @media (max-width: 480px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .editor-body {
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      padding: 16px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px;
+      font-size: 11px;
+    }
+
+    .code-line {
+      white-space: nowrap;
+
+      @media (max-width: 480px) {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      &.indent {
+        padding-left: 20px;
+
+        @media (max-width: 480px) {
+          padding-left: 12px;
+        }
+      }
+
+      &.spacer {
+        height: 12px;
+
+        @media (max-width: 480px) {
+          height: 8px;
+        }
+      }
+
+      .comment {
+        color: #52525b;
+      }
+
+      .keyword {
+        color: var(--aden-syntax-keyword);
+      }
+
+      .string {
+        color: var(--aden-syntax-string);
+      }
+
+      .prop {
+        color: var(--aden-syntax-attr);
+      }
+    }
+  }
+}
+
+.token-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
+
+  .rule-card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--aden-border-gray);
+    border-radius: 16px;
+
+    @media (max-width: 768px) {
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    h4 {
+      color: var(--aden-white);
+      font-size: 14px;
+      margin: 0 0 8px 0;
+
+      @media (max-width: 480px) {
+        font-size: 13px;
+      }
+    }
+
+    p {
+      color: var(--aden-text-muted-gray);
+      font-size: 12px;
+      margin: 0;
+      line-height: 1.5;
+
+      @media (max-width: 480px) {
+        font-size: 11px;
+      }
+    }
+
+    &.highlighted {
+      border-color: var(--aden-primary-dark-green);
+      background: rgba(34, 197, 94, 0.03);
+
+      strong {
+        color: var(--aden-primary-dark-green);
+      }
+    }
+  }
+}

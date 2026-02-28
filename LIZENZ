@@ -1,0 +1,35 @@
+ADEN UI COMMUNITY LICENSE
+Copyright (c) 2026 Adrian Enßlin
+
+1. GRANT OF PERMISSION
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to use, copy, modify,
+and distribute the Software for personal, educational, and non-commercial purposes only.
+
+2. COMMERCIAL RESTRICTIONS
+Commercial use of the Software is strictly prohibited. This includes, but is not limited to:
+- Selling or sub-licensing the Software or parts of it.
+- Integrating the Software into commercial products or paid services.
+- Using the Software for financial gain.
+Commercial usage requires explicit written permission from the copyright holder.
+
+3. CONTRIBUTOR PROVISIONS (CLA)
+By submitting source code, documentation, or other materials ("Contribution") to
+this project (via Pull Request, Fork submission, or official form), you agree to
+the following:
+- Ownership: You retain the copyright and ownership of your Contribution.
+- License to Aden UI: You grant Adrian Enßlin (Aden UI) a perpetual, irrevocable,
+  worldwide, royalty-free, and non-exclusive license to use, reproduce, modify,
+  distribute, and commercially exploit your Contribution as part of the official
+  Aden UI library or associated products.
+- Original Work: You represent that your Contribution is your original creation.
+
+4. ATTRIBUTION
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+5. NO WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE.
