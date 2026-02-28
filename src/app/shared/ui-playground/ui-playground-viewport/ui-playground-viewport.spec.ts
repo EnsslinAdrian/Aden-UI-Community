@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MySecondComponent } from './my-second-component';
+import { UiPlaygroundViewport } from './ui-playground-viewport';
 
-describe('MySecondComponent', () => {
-  let component: MySecondComponent;
-  let fixture: ComponentFixture<MySecondComponent>;
+describe('UiPlaygroundViewport', () => {
+  let component: UiPlaygroundViewport;
+  let fixture: ComponentFixture<UiPlaygroundViewport>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MySecondComponent]
+      imports: [UiPlaygroundViewport]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MySecondComponent);
+    fixture = TestBed.createComponent(UiPlaygroundViewport);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

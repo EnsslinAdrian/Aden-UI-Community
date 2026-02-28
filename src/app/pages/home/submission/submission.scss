@@ -1,0 +1,71 @@
+.submission-area {
+  margin-top: 40px;
+}
+
+.submission-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  border: 1px solid var(--aden-accent-blue);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 1000px) { flex-direction: column; text-align: center; align-items: center; }
+
+  .content {
+    max-width: 600px;
+    .badge { color: var(--aden-accent-blue); font-weight: 900; text-transform: uppercase; font-size: 12px; margin-bottom: 12px; }
+    p { color: var(--aden-text-muted-gray); margin: 16px 0 32px 0; }
+  }
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--aden-white);
+    font-size: 14px;
+
+    @media (max-width: 1000px) { justify-content: center; }
+
+    .num {
+      width: 24px;
+      height: 24px;
+      background: var(--aden-accent-blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+  }
+}
+
+.submit-btn {
+  background: var(--aden-white);
+  color: #000;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}

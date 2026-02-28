@@ -3,6 +3,8 @@ import { MetaData, PlaygroundFile, UiPlayground } from "../../shared/ui-playgrou
 import { MyComponent } from "./my-component/my-component";
 
 // @ts-expect-error
+import docsRaw from './docs.md' with { loader: 'text' };
+// @ts-expect-error
 import toggleTs from './my-component/my-component.ts' with { loader: 'text' };
 // @ts-expect-error
 import toggleHtml from './my-component/my-component.html' with { loader: 'text' };
@@ -12,8 +14,6 @@ import toggleScss from './my-component/my-component.scss' with { loader: 'text' 
 import toggleInterface from './interfaces/interface' with { loader: 'text' };
 // @ts-expect-error
 import toggleService from './services/services.ts' with { loader: 'text' };
-// @ts-expect-error
-import toggleSecond from './my-second-component/my-second-component.ts' with { loader: 'text' };
 
 
 @Component({
@@ -23,7 +23,11 @@ import toggleSecond from './my-second-component/my-second-component.ts' with { l
   styleUrls: ['./my-contribution.scss'],
 })
 export class MyContribution {
-  meta: MetaData = { title: 'Neon Toggle', description: 'A neon toggle component', username: 'dev-master' };
+  meta: MetaData = { title: 'Insert title here', description: 'Insert description here', username: 'Insert username from AdenUi here' };
+
+  install = `Here you can provide installation instructions for your contribution. For example:`;
+
+  docs = docsRaw;
 
   files: PlaygroundFile[] = [
     { name: 'my-component.html', language: 'markup', code: toggleHtml },
@@ -31,8 +35,6 @@ export class MyContribution {
     { name: 'my-component.ts', language: 'typescript', code: toggleTs },
     { name: 'interface.ts', language: 'typescript', code: toggleInterface },
     { name: 'service.ts', language: 'typescript', code: toggleService },
-    { name: 'my-second-component.ts', language: 'typescript', code: toggleSecond },
   ];
 
-  install = `npm install my-neon-toggle`;
 }

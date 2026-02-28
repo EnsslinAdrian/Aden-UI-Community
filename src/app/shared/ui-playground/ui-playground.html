@@ -4,20 +4,15 @@
   <div class="playground-body">
     <div class="tabs-nav">
       <div class="tab-group">
-        <button class="tab-btn" [class.active]="activeTab() === 'preview'" (click)="setTab('preview')">
-          Preview
-        </button>
-
-        @if (files().length > 0) {
-        <button class="tab-btn" [class.active]="activeTab() === 'code'" (click)="setTab('code')">
-          Code
-        </button>
+        <button class="tab-btn" [class.active]="activeTab() === 'preview'" (click)="setTab('preview')">Preview</button>
+        @if (docsCode()) {
+        <button class="tab-btn" [class.active]="activeTab() === 'docs'" (click)="setTab('docs')">Docs</button>
         }
-
+        @if (files().length > 0) {
+        <button class="tab-btn" [class.active]="activeTab() === 'code'" (click)="setTab('code')">Code</button>
+        }
         @if (installCode()) {
-        <button class="tab-btn" [class.active]="activeTab() === 'install'" (click)="setTab('install')">
-          Install
-        </button>
+        <button class="tab-btn" [class.active]="activeTab() === 'install'" (click)="setTab('install')">Install</button>
         }
       </div>
     </div>
@@ -29,48 +24,11 @@
       </div>
       }
 
-      @if (activeTab() === 'code' || activeTab() === 'install') {
-      <div class="code-section">
-        <div class="code-header">
-          <div class="file-tabs-container">
-            @if (activeTab() === 'code') {
-            @if (files().length > 1) {
-            <div class="sub-tabs">
-              @for (file of files(); track file.name; let i = $index) {
-              <button class="sub-tab-btn" [class.active]="activeFileIndex() === i" (click)="setFileIndex(i)">
-                {{ file.name }}
-              </button>
-              }
-            </div>
-            } @else if (files().length === 1) {
-            <span class="file-label">{{ files()[0].name }}</span>
-            }
-            } @else if (activeTab() === 'install') {
-            <span class="file-label">Terminal</span>
-            }
-          </div>
-
-          <button class="copy-trigger" (click)="copyCode()" [class.success]="copied()">
-            <div class="btn-content">
-              @if (!copied()) {
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              <span class="label">Copy</span>
-              } @else {
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span class="label">Copied</span>
-              }
-            </div>
-          </button>
-        </div>
-
-        <app-code-highlight [code]="currentCodeDisplay()" [language]="currentLanguage()">
-        </app-code-highlight>
-      </div>
+      @if (activeTab() !== 'preview') {
+      <app-ui-playground-viewport [activeTab]="$any(activeTab())" [files]="files()"
+        [activeFileIndex]="activeFileIndex()" [docsCode]="docsCode()" [installCode]="installCode()"
+        (fileIndexChange)="setFileIndex($event)">
+      </app-ui-playground-viewport>
       }
     </div>
   </div>

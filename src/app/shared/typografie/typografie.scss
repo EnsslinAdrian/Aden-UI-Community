@@ -1,0 +1,100 @@
+.xxsmall {
+  font-size: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 8px;
+  }
+}
+
+.xsmall {
+  font-size: 12px;
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+}
+
+.small {
+  font-size: 14px;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.medium {
+  font-size: 16px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+.xmedium {
+  font-size: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+}
+
+.large {
+  font-size: 42px;
+
+  @media (max-width: 640px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+.xlarge {
+  font-size: 64px;
+
+  @media (max-width: 640px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 32px;
+  }
+}
+
+
+.white {
+  color: var(--aden-white);
+}
+
+.white-80 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.black {
+  color: var(--aden-pure-black);
+}
+
+.grey {
+  color: var(--aden-text-muted-gray);
+}
+
+.green {
+  color: var(--aden-primary-dark-green);
+}
+
+.red {
+  color: var(--aden-danger-red);
+}
+
+p {
+  margin: 0;
+  font-family: var(--main-font);
+}
+
+.typography code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--aden-primary-green);
+}

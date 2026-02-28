@@ -1,0 +1,44 @@
+<div class="code-section">
+  <div class="code-header">
+    <div class="file-tabs-container">
+      @if (activeTab() === 'code') {
+        @if (files().length > 1) {
+          <div class="sub-tabs">
+            @for (file of files(); track file.name; let i = $index) {
+              <button class="sub-tab-btn" [class.active]="activeFileIndex() === i" (click)="selectFile(i)">
+                {{ getFileName(file.name) }}
+              </button>
+            }
+          </div>
+        } @else if (files().length === 1) {
+          <span class="file-label">{{ files()[0].name }}</span>
+        }
+      } @else if (activeTab() === 'docs') {
+        <span class="file-label">Documentation</span>
+      } @else if (activeTab() === 'install') {
+        <span class="file-label">Installation</span>
+      }
+    </div>
+
+    <button class="copy-trigger" (click)="copyCode()" [class.success]="copied()">
+       <div class="btn-content">
+          @if (!copied()) {
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="label">Copy</span>
+          } @else {
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="label">Copied</span>
+          }
+       </div>
+    </button>
+  </div>
+
+  <div class="viewport-content">
+    @if (activeTab() === 'docs') {
+      <app-ui-playground-docs [code]="docsCode()"></app-ui-playground-docs>
+    } @else {
+      <app-code-highlight [code]="currentCodeDisplay()" [language]="currentLanguage()">
+      </app-code-highlight>
+    }
+  </div>
+</div>

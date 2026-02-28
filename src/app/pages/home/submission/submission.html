@@ -1,0 +1,31 @@
+<section class="submission-area fade-in">
+  <div class="submission-card">
+    <div class="content">
+      <div class="badge">Step 3</div>
+      <app-typografie text="Push & Submit" size="large" color="white" [weight]="900"></app-typografie>
+      <p>Finished your masterpiece? Follow these steps to get it listed on the official Aden UI library.</p>
+
+      <div class="process-steps">
+        <div class="step">
+          <span class="num">1</span>
+          <span>Push changes to your <strong>public GitHub Fork</strong>.</span>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <span>Ensure all files (HTML, SCSS, TS, Docs) are committed.</span>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <span>Copy your Fork URL and submit it via the form below.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button routerLink="/contribution/form" class="submit-btn">
+        <span>Open Submission Form</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>

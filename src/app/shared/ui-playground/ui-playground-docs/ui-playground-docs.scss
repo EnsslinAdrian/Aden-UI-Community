@@ -1,0 +1,99 @@
+.aden-docs-style {
+  padding: 32px;
+  background: #0d0d0d;
+  color: var(--aden-white);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-family: var(--aden-main-font), sans-serif;
+  overflow-y: auto;
+  max-height: 600px;
+
+  ::ng-deep {
+    h1, h2, h3 {
+      color: var(--aden-white);
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-family: var(--aden-main-font);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--aden-border-gray);
+      padding-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--aden-border-gray);
+      padding-bottom: 4px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--aden-text-muted-gray);
+    }
+
+    code {
+      background: var(--aden-white-alpha-10);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--aden-code-font);
+      font-size: 0.85rem;
+      color: var(--aden-primary-dark-green);
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+      li {
+        margin-bottom: 6px;
+        color: var(--aden-text-muted-gray);
+      }
+    }
+
+    a {
+      color: var(--aden-accent-blue);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      &:hover { opacity: 0.8; text-decoration: underline; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+
+      th, td {
+        text-align: left;
+        padding: 10px;
+        border: 1px solid var(--aden-border-gray);
+      }
+
+      th {
+        background: var(--aden-bg-hover);
+        color: var(--aden-white);
+        font-weight: 600;
+      }
+
+      td {
+        color: var(--aden-white);
+      }
+    }
+
+    pre {
+      background: var(--aden-pure-black);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--aden-border-gray);
+      margin-bottom: 16px;
+      overflow-x: auto;
+
+      code {
+        background: transparent;
+        padding: 0;
+        color: inherit;
+      }
+    }
+  }
+}

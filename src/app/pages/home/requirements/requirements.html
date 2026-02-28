@@ -1,0 +1,44 @@
+<section class="rules-section">
+  <div class="section-header">
+    <app-typografie text="Technical Standards" size="medium" color="white" [weight]="800"></app-typografie>
+    <p>To ensure high quality, every component must follow these modern Angular rules.</p>
+  </div>
+
+  <div class="rules-grid">
+    <!-- Rule 1 -->
+    <div class="rule-item">
+      <div class="rule-icon">📦</div>
+      <div class="rule-content">
+        <h4>Standalone Only</h4>
+        <p>No modules allowed. Use <code>standalone: true</code> for all components.</p>
+      </div>
+    </div>
+
+    <!-- Rule 2 -->
+    <div class="rule-item">
+      <div class="rule-icon">⚡</div>
+      <div class="rule-content">
+        <h4>Signal Driven</h4>
+        <p>Use <code>input()</code>, <code>output()</code> and <code>signal()</code> for state management.</p>
+      </div>
+    </div>
+
+    <!-- Rule 3 -->
+    <div class="rule-item">
+      <div class="rule-icon">📱</div>
+      <div class="rule-content">
+        <h4>320px Responsive</h4>
+        <p>Your layout must work flawlessly on small screens (minimum 320px width).</p>
+      </div>
+    </div>
+
+    <!-- Rule 4 -->
+    <div class="rule-item">
+      <div class="rule-icon">🎨</div>
+      <div class="rule-content">
+        <h4>Design Tokens</h4>
+        <p>Prioritize global variables from <code>_variables.scss</code> for consistency.</p>
+      </div>
+    </div>
+  </div>
+</section>
